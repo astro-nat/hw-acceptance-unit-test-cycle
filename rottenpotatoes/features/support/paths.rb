@@ -35,3 +35,15 @@ module NavigationHelpers
 end
 
 World(NavigationHelpers)
+
+when /^the edit page for "(.*)"$/ then
+  id = Movie.where(title: $1).first.id
+  "/movies/#{id}/edit"
+
+ when /^the details page for "(.*)"$/ then
+  id = Movie.where(title: $1).first.id
+  "/movies/#{id}"
+
+ when /the Similar Movies page for "(.*)"$/ then
+  id = Movie.where(title: $1).first.id
+  "/movies/#{id}/similar"
